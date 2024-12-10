@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <div >
+      <div className='bg-[#f5f5f7]'>
         <Nav />
         
       </div>
