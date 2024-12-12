@@ -20,6 +20,7 @@ const Nav = () => {
                     </div>
 
                     <div className="hidden lg:flex flex-1 items-center justify-center font-medium">
+                        
                         <ul className="flex gap-6 text-sm">
                             <Link spy={true} smooth={true} to="Store">
                                 <li className="cursor-pointer hover:text-gray-600">Store</li>
@@ -54,7 +55,7 @@ const Nav = () => {
                     </div>
                 </div>
                 <button
-                    className="block lg:hidden text-2xl"
+                    className="block lg:hidden px-4 text-2xl"
                     onClick={handleClick}
                 >
                     {click ? <FaTimes /> : <CiMenuFries />}
