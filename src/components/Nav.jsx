@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { Link } from "react-scroll";
-import { FaTimes } from "react-icons/fa";
-import { FaApple } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
+import { FaTimes, FaApple } from "react-icons/fa";
 import { CiMenuFries } from "react-icons/ci";
 import { AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
 
@@ -14,38 +13,37 @@ const Nav = () => {
             <div className="h-[8vh] flex justify-center items-center px-5 lg:px-20">
                 <div className="flex justify-between items-center w-full max-w-screen-lg">
                     <div className="text-2xl cursor-pointer">
-                        <Link to="Home" smooth={true} spy={true}>
-                        <FaApple />
-                        </Link>
+                        <NavLink to="/">
+                            <FaApple />
+                        </NavLink>
                     </div>
 
                     <div className="hidden lg:flex flex-1 items-center justify-center font-medium">
-                        
                         <ul className="flex gap-6 text-sm">
-                            <Link spy={true} smooth={true} to="Store">
-                                <li className="cursor-pointer hover:text-gray-600">Store</li>
-                            </Link>
-                            <Link spy={true} smooth={true} to="Mac">
-                                <li className="cursor-pointer hover:text-gray-600">Mac</li>
-                            </Link>
-                            <Link spy={true} smooth={true} to="iPad">
-                                <li className="cursor-pointer hover:text-gray-600">iPad</li>
-                            </Link>
-                            <Link spy={true} smooth={true} to="iPhone">
-                                <li className="cursor-pointer hover:text-gray-600">iPhone</li>
-                            </Link>
-                            <Link spy={true} smooth={true} to="Watch">
-                                <li className="cursor-pointer hover:text-gray-600">Watch</li>
-                            </Link>
-                            <Link spy={true} smooth={true} to="Vision">
-                                <li className="cursor-pointer hover:text-gray-600">Vision</li>
-                            </Link>
-                            <Link spy={true} smooth={true} to="AirPods">
-                                <li className="cursor-pointer hover:text-gray-600">AirPods</li>
-                            </Link>
-                            <Link spy={true} smooth={true} to="Support">
-                                <li className="cursor-pointer hover:text-gray-600">Support</li>
-                            </Link>
+                            <NavLink to="/Item" className="cursor-pointer hover:text-gray-600">
+                                <li>Detalle</li>
+                            </NavLink>
+                            <NavLink to="/category/Mac" className="cursor-pointer hover:text-gray-600">
+                                <li>Mac</li>
+                            </NavLink>
+                            <NavLink to="/category/iPad" className="cursor-pointer hover:text-gray-600">
+                                <li>iPad</li>
+                            </NavLink>
+                            <NavLink to="/category/iPhone" className="cursor-pointer hover:text-gray-600">
+                                <li>iPhone</li>
+                            </NavLink>
+                            <NavLink to="/category/Watch" className="cursor-pointer hover:text-gray-600">
+                                <li>Watch</li>
+                            </NavLink>
+                            <NavLink to="/category/Vision" className="cursor-pointer hover:text-gray-600">
+                                <li>Vision</li>
+                            </NavLink>
+                            <NavLink to="/category/AirPods" className="cursor-pointer hover:text-gray-600">
+                                <li>AirPods</li>
+                            </NavLink>
+                            <NavLink to="/Support" className="cursor-pointer hover:text-gray-600">
+                                <li>Support</li>
+                            </NavLink>
                         </ul>
                     </div>
 
@@ -68,30 +66,30 @@ const Nav = () => {
                 } absolute top-[8vh] w-full left-0 bg-gray-100 text-black`}
             >
                 <ul className="text-left text-base p-5">
-                    <Link spy={true} smooth={true} to="Store">
+                    <NavLink to="/Store" onClick={handleClick}>
                         <li className="py-3 border-b border-gray-300 hover:bg-gray-200">Store</li>
-                    </Link>
-                    <Link spy={true} smooth={true} to="Mac">
+                    </NavLink>
+                    <NavLink to="/Mac" onClick={handleClick}>
                         <li className="py-3 border-b border-gray-300 hover:bg-gray-200">Mac</li>
-                    </Link>
-                    <Link spy={true} smooth={true} to="iPad">
+                    </NavLink>
+                    <NavLink to="/iPad" onClick={handleClick}>
                         <li className="py-3 border-b border-gray-300 hover:bg-gray-200">iPad</li>
-                    </Link>
-                    <Link spy={true} smooth={true} to="iPhone">
+                    </NavLink>
+                    <NavLink to="/iPhone" onClick={handleClick}>
                         <li className="py-3 border-b border-gray-300 hover:bg-gray-200">iPhone</li>
-                    </Link>
-                    <Link spy={true} smooth={true} to="Watch">
+                    </NavLink>
+                    <NavLink to="/Watch" onClick={handleClick}>
                         <li className="py-3 border-b border-gray-300 hover:bg-gray-200">Watch</li>
-                    </Link>
-                    <Link spy={true} smooth={true} to="Vision">
+                    </NavLink>
+                    <NavLink to="/Vision" onClick={handleClick}>
                         <li className="py-3 border-b border-gray-300 hover:bg-gray-200">Vision</li>
-                    </Link>
-                    <Link spy={true} smooth={true} to="AirPods">
+                    </NavLink>
+                    <NavLink to="/AirPods" onClick={handleClick}>
                         <li className="py-3 border-b border-gray-300 hover:bg-gray-200">AirPods</li>
-                    </Link>
-                    <Link spy={true} smooth={true} to="Support">
+                    </NavLink>
+                    <NavLink to="/Support" onClick={handleClick}>
                         <li className="py-3 hover:bg-gray-200">Support</li>
-                    </Link>
+                    </NavLink>
                 </ul>
             </div>
         </nav>
