@@ -17,7 +17,6 @@ export default function ItemListContainertwo() {
           
           setLoading(true)
           const respuestaPromise = getAsyncData()
-          console.log(respuestaPromise)
           respuestaPromise
           .then( (respuestaPromise) => {
               setProducts(respuestaPromise)
@@ -26,7 +25,6 @@ export default function ItemListContainertwo() {
         } else {          
           setLoading(true)
           const respuestaPromise = GetAsyncDataByCategory(catid)
-          console.log(respuestaPromise)
           respuestaPromise
           .then( (respuestaPromise) => {
               setProducts(respuestaPromise)

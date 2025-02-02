@@ -68,7 +68,6 @@ export async function createDocument() {
     
     },);
 
-    console.log("Document written with ID: ", docRef.id);
 
 }
 

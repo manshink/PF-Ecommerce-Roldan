@@ -2,7 +2,6 @@ import products from "./data"
 
 function getAsyncData() {
     
-    console.log("Solicitando datos...")
     
     const promiseData = new Promise( (resolve, reject) => {
         const errorFatal = false
@@ -15,14 +14,12 @@ function getAsyncData() {
         }, 2000 )
         } )
 
-    console.log("Promesa generada.")
 
     return promiseData;
 }
 
 export function GetAsyncDataById(id) {
     
-    console.log("Solicitando datos...")
     
     const promiseData = new Promise( (resolve, reject) => {
         const errorFatal = false
@@ -30,7 +27,6 @@ export function GetAsyncDataById(id) {
         setTimeout( () => {
             if (errorFatal) reject("algo salio mal!!")
 
-            console.log('Promesa terminada')
 
             const itemRequested = products.find( product => {return product.id === Number   (id)} )
 
@@ -40,14 +36,12 @@ export function GetAsyncDataById(id) {
         }, 500 )
         } )
 
-    console.log("Promesa generada.")
 
     return promiseData;
 }
 
 export function GetAsyncDataByCategory(catid) {
     
-    console.log("Solicitando datos...")
     
     const promiseData = new Promise( (resolve, reject) => {
         const errorFatal = false
@@ -55,7 +49,6 @@ export function GetAsyncDataByCategory(catid) {
         setTimeout( () => {
             if (errorFatal) reject("algo salio mal!!")
 
-            console.log('Promesa terminada')
 
             const itemRequested = products.filter( product => {return product.category.toLowerCase() === catid.toLowerCase()} )
 
@@ -65,7 +58,6 @@ export function GetAsyncDataByCategory(catid) {
         }, 500 )
         } )
 
-    console.log("Promesa generada.")
 
     return promiseData;
 }

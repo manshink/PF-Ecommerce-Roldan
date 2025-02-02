@@ -11,7 +11,6 @@ const Nav = () => {
     const context = useContext(cartContext);
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
-    console.log("context----->", context);
 
     return (
         <nav className="relative bg-white text-black shadow-lg">

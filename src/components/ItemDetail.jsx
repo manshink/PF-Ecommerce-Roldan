@@ -11,7 +11,6 @@ function ItemDetail(props) {
     const { addItem } = useContext(cartContext);
 
     function handleAddToCart(count) {
-        console.log(`Agregado ${count} productos  al carrito`);
         addItem({id, title, price, count, img});
       }
 

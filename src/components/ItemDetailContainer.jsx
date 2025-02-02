@@ -18,7 +18,6 @@ function ItemDetailContainer() {
         getItemData();    
     }, [id]);
     
-    console.log(itemInfo)
     return (
 
     <ItemDetail {...itemInfo} id={id}/>
