@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import {GetAsyncDataById} from "../data/getAsyncData"
+import {GetAsyncDataById} from "../data/database"
 import ItemDetail from "./ItemDetail";
 
 
@@ -21,7 +21,7 @@ function ItemDetailContainer() {
     console.log(itemInfo)
     return (
 
-    <ItemDetail {...itemInfo}/>
+    <ItemDetail {...itemInfo} id={id}/>
 
   )
 }

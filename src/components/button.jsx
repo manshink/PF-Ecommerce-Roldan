@@ -2,7 +2,7 @@ import React, { Children, useState } from 'react'
 
 export default function button(props) {
 
-    const { disabled, children } = props;
+    const { disabled, children, onClick } = props;
     const [ isDisabled, setIsDisabled  ] = useState(disabled)
     
   return (

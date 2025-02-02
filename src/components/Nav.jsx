@@ -3,10 +3,15 @@ import { NavLink } from "react-router-dom";
 import { FaTimes, FaApple } from "react-icons/fa";
 import { CiMenuFries } from "react-icons/ci";
 import { AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
+import { useContext } from "react";
+import cartContext from "../context/cartContext";
 
 const Nav = () => {
+
+    const context = useContext(cartContext);
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
+    console.log("context----->", context);
 
     return (
         <nav className="relative bg-white text-black shadow-lg">
@@ -48,9 +53,16 @@ const Nav = () => {
                     </div>
 
                     <div className="flex items-center gap-4">
-                        <AiOutlineSearch className="text-xl cursor-pointer hover:text-gray-600" />
-                        <AiOutlineShoppingCart className="text-xl cursor-pointer hover:text-gray-600" />0
-                    </div>
+    <AiOutlineSearch className="text-xl cursor-pointer hover:text-gray-600" />
+    <NavLink to="/cart" className="relative">
+        <AiOutlineShoppingCart className="text-xl cursor-pointer hover:text-gray-600" />
+        {context.countItemsInCart() > 0 && (
+            <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full text-xs px-2">
+                {context.countItemsInCart()}
+            </span>
+        )}
+    </NavLink>
+</div>
                 </div>
                 <button
                     className="block lg:hidden px-4 text-2xl"

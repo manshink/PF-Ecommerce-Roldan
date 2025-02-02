@@ -1,10 +1,19 @@
 import Button from './button';
 import ItemCounter from '../components/itemCounter';
+import { createContext } from "react";
+import { useContext } from "react";
+import cartContext from "../context/cartContext";
 
 
 function ItemDetail(props) {
 
-    const {title, price, text, description, id, stock} = props
+    const {title, price, text, description, stock, img, id} = props;
+    const { addItem } = useContext(cartContext);
+
+    function handleAddToCart(count) {
+        console.log(`Agregado ${count} productos  al carrito`);
+        addItem({id, title, price, count, img});
+      }
 
   return (
     <div className="pt-[20px] pb-[40px] ml-20">
@@ -22,7 +31,7 @@ function ItemDetail(props) {
               <p className="text-sm">{price}</p>
             </div>
           </div>
-          <ItemCounter/> 
+          <ItemCounter onSubmitCount={handleAddToCart} max={stock}/> 
           </div>
                 
         </div>

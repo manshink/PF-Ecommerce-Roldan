@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import getAsyncData, { GetAsyncDataByCategory } from '../data/getAsyncData';
+import getAsyncData, { GetAsyncDataByCategory } from '../data/database';
 import { useState, useEffect } from 'react';
 import ItemList from './itemList';
 
@@ -37,7 +37,7 @@ export default function ItemListContainertwo() {
     }, [catid] )
     
     if (loading) {
-        return <div className="text-center text-gray-600">Loading products...</div>; // Display while loading
+        return <div className="text-center text-gray-600">Loading products...</div>; 
       }
     
 
