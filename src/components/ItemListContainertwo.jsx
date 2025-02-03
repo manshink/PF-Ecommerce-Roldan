@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import getAsyncData, { GetAsyncDataByCategory } from '../data/database';
 import { useState, useEffect } from 'react';
-import ItemList from './itemList';
+import ItemList from './ItemList';
 
 
 export default function ItemListContainertwo() {
